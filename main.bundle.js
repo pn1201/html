@@ -519,7 +519,7 @@ var HomeComponent = (function () {
         // Subscribe to a newly created stream
         // Create a publisher
         var publisher = OT.initPublisher('publisher', {
-            insertMode: 'append',
+            //insertMode: 'append',
             width: '100px',
             height: '70px'
         }, handleError);
@@ -536,9 +536,7 @@ var HomeComponent = (function () {
             }
         });
         this.videoopentoksession.on('streamCreated', function (event) {
-            self.videoopentoksession.subscribe(event.stream, 'subscriber', {
-                insertMode: 'append'
-            }, handleError);
+            self.videoopentoksession.subscribe(event.stream, 'subscriber', {}, handleError);
         });
         function handleError(error) {
             if (error) {
@@ -595,8 +593,6 @@ var HomeComponent = (function () {
         this.getSesstionDetail();
     };
     HomeComponent.prototype.createProducerClip = function (hexString, filename) {
-        console.log('createProducerClip');
-        console.log(JSON.stringify({ sessionid: hexString, filename: filename, data: this.videochatData }));
         this.sendMessage(JSON.stringify({ sessionid: hexString, filename: filename, data: this.videochatData }), "clip");
     };
     HomeComponent.prototype.getSesstionDetail = function () {
