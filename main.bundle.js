@@ -590,6 +590,7 @@ var HomeComponent = (function () {
             if (this.currentProducer && !this.currentProducer.username)
                 this.currentProducer = 'Unknown user';
             this.upSvc.pushUpload(this.currentUpload, this.sesstionID, filename, this.currentProducer.key, this.currentProducer.username);
+            this.createProducerClip(this.firebasesession, filename);
         }
         this.getSesstionDetail();
     };
