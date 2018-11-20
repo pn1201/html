@@ -172,6 +172,7 @@ var LoginComponent = (function () {
             this.afAuth.auth.signInWithEmailAndPassword(form.value.email, form.value.password)
                 .then(function (user) {
                 _this.sharedService.setFlag(false);
+                console.log(user);
                 _this.router.navigateByUrl('/home');
                 localStorage.setItem('email', user.email);
                 localStorage.setItem('id', user.uid);

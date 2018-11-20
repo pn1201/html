@@ -1236,6 +1236,23 @@ MaterialModule = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/past/Upload.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UploadFS; });
+var UploadFS = (function () {
+    function UploadFS(file) {
+        this.createdAt = new Date();
+        this.file = file;
+    }
+    return UploadFS;
+}());
+
+//# sourceMappingURL=Upload.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/past/past.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1244,7 +1261,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 exports.push([module.i, "@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);", ""]);
 
 // module
-exports.push([module.i, ".home{\r\n    background: linear-gradient(#d1d1d1, #fafafa);\r\n    overflow-x: hidden;\r\n    height: 100%;\r\n    overflow-y: hidden;\r\n}\r\n.p_header{\r\n    padding: 10px 35px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    background: linear-gradient(#fafafa, #d1d1d1);\r\n    border-bottom: 1px #f0f0f0 solid;  \r\n}\r\n\r\n.p_header span{\r\n    color:#000034;\r\n    font-weight: 400;\r\n}\r\n\r\n.p_content{\r\n    height: calc( 100% - 90px );\r\n    overflow-y: auto;\r\n}\r\n\r\n.p_header i{\r\n    color:grey;\r\n}\r\n\r\n.p_content_l a{\r\n    color:#000034;\r\n    padding: 10px 0px;\r\n    width: 100%;\r\n    text-align: left;\r\n    padding-left: 35px;\r\n}\r\n\r\n.p_content_l a.active{\r\n    color: #ffffff;\r\n    background: rgb(29,49,74);\r\n    background: linear-gradient(to right, #000034 0%,rgb(39, 39, 93) 50%,#000034 100%);\r\n}\r\n\r\n.p_content_l img{\r\n    width: 20px;\r\n}\r\n\r\n.p_content_l{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    width: 200px;\r\n    float: left;\r\n    padding-top: 15%;\r\n}\r\n\r\n.p_content_r{\r\n    float: right;\r\n    background-color: #f0f0f0;    \r\n    padding: 35px 65px;\r\n    width: calc( 100% - 200px );\r\n    height: calc( 100% - 80px );\r\n}\r\n\r\n.btnfile:hover{\r\n    background-color: transparent;\r\n    cursor: pointer;\r\n}\r\n#myfile{\r\n    cursor: pointer;\r\n}\r\n\r\n.title{\r\n    color: #000034;\r\n    font-size: 20px;\r\n    text-align: left;\r\n    padding-bottom: 20px;\r\n    font-weight: 800;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n}\r\n\r\n.title span{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    font-weight: 100;\r\n    font-size: 14px;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.c_r{\r\n    float: right;\r\n    width: 50%;\r\n}\r\n\r\n.c_l{\r\n    float: left;\r\n    width: 100%;\r\n    background-color: #e2e2e2;\r\n    padding: 20px;\r\n}\r\n\r\n.c_title{\r\n    font-size: 15px;\r\n    color: #f4f4f4;\r\n    text-align: left;\r\n}\r\n\r\n.c_r_t, .c_l_t, .c_l_b, .c_r_b{\r\n    background-color: #1e3046;\r\n    padding: 20px;\r\n    border-radius: 3px;\r\n    text-align: right;\r\n}\r\n\r\n.c_l_t{\r\n    margin-right: 10px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.c_r_t{\r\n    margin-left: 10px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\r\n    height: 225px;\r\n}\r\n\r\n.c_l_b{\r\n    margin-right: 10px;\r\n    margin-top: 20px;\r\n}\r\n\r\n.c_r_b{\r\n    margin-left: 10px;\r\n    margin-top: 20px;\r\n    text-align: left;\r\n}\r\n\r\nhr{\r\n    border-color: #d0d4d8;\r\n}\r\n\r\n\r\n.c_l_b_lbl{\r\n    text-align: left;\r\n    color: #818892;\r\n}\r\n\r\n.c_r_t .c_title span{\r\n    color: #ecedee;\r\n}\r\n\r\n.c_r_t_lbl{\r\n    margin-top: 20px;\r\n    color: #717a88;\r\n    word-wrap: break-word;\r\n}\r\n\r\ntable{\r\n    width: 100%; \r\n    min-width: 360px;   \r\n}\r\n\r\nth{\r\n    color: #000034;\r\n    font-weight: 100;\r\n    height: 40px;\r\n    padding-left: 10px;\r\n}\r\n\r\ntd{\r\n    color: #848a9c;\r\n    padding-left: 10px;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n}\r\n\r\ntd.download{\r\n    color: #20c1ae;\r\n}\r\n\r\ntr{\r\n    /* height: 40px; */\r\n}\r\n\r\n.tdborder{\r\n    border-bottom-right-radius: 3px;\r\n    border-top-right-radius: 3px; \r\n}\r\n\r\ntr td:first-child{\r\n    border-bottom-left-radius: 3px;\r\n    border-top-left-radius: 3px;\r\n}\r\n\r\n::-webkit-input-placeholder { /* Chrome/Opera/Safari */\r\n    color: #717a88;\r\n}\r\n::-moz-placeholder { /* Firefox 19+ */\r\n    color: #717a88;\r\n}\r\n:-ms-input-placeholder { /* IE 10+ */\r\n    color: #717a88;\r\n}\r\n:-moz-placeholder { /* Firefox 18- */\r\n    color: #717a88;\r\n}\r\n\r\n.upload-btn-wrapper {\r\n    position: relative;\r\n    overflow: hidden;\r\n    display: inline-block;\r\n    width:100%\r\n}\r\n\r\n.btnfile {\r\n    border: 1px dashed #293a4f;\r\n    color: #d3d4d8;\r\n    background-color: transparent;\r\n    font-size: 18px;\r\n    width: 100%;\r\n    height: 80px;\r\n}\r\n\r\n.upload-btn-wrapper input[type=file] {\r\n    font-size: 100px;\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    opacity: 0;\r\n}\r\n\r\n.cursor{\r\n    cursor: pointer;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    width: 5px;\r\n}\r\n\r\n/* Track */\r\n::-webkit-scrollbar-track {\r\n    background: #000034;\r\n    border: 1px solid transparent;\r\n    background-clip: content-box;   /* THIS IS IMPORTANT */\r\n}\r\n\r\n/* Handle */\r\n::-webkit-scrollbar-thumb {\r\n    background: #d3d4d8;\r\n    border: 1px solid #d3d4d8;\r\n    border-radius: 3px;\r\n}\r\n\r\n.fa-pause, .fa-play{\r\n    border: 1px solid #717a88;\r\n    border-radius: 50%;\r\n    font-size: 10px;\r\n    width: 20px;\r\n    height: 20px;\r\n    color: white;\r\n    padding-top: 4px;\r\n    padding-left: 1px;\r\n}\r\n\r\n\r\n.table_div{\r\n    height: 600px;  \r\n    overflow-y: auto;\r\n    overflow-x: auto;\r\n    padding-right: 10px;\r\n}\r\n\r\n.menu_mobile{\r\n    display: none;\r\n}\r\n\r\n.menu_mobile_part div:last-child{\r\n    border-bottom-width: 0px;\r\n}\r\n\r\n.menu_browser{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n@media (max-width: 1178px) { \r\n    .c_l, .c_r{\r\n        width: 100%;\r\n    }\r\n\r\n    .c_r_t, .c_l_b, .c_l_t, .c_r_b{\r\n        margin: 0px;\r\n        margin-top: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width: 735px) { \r\n    .p_content_l{\r\n        display: none;\r\n    }\r\n    .menu_mobile{\r\n        display: block;\r\n    }\r\n\r\n    .menu_browser{\r\n        display: none;\r\n    }\r\n\r\n    .p_content_r{\r\n        width: 100%;\r\n        padding: 35px 25px;\r\n    }\r\n\r\n    /* .p_header i{\r\n        font-size: 20px;\r\n    }\r\n\r\n    .p_header i.active{\r\n        color: #21cdb8;        \r\n    } */\r\n}\r\n\r\n.menu_mobile_part{\r\n    position: absolute;\r\n    top: 67px;\r\n    right: 0px;\r\n    background-color: #f0f0f0;\r\n    border-radius: 5px;\r\n    border: 1px solid #e2e2e2;\r\n    padding: 0px 10px;\r\n    padding-top: 10px;\r\n    z-index: 99;\r\n    color:#848a9c;\r\n}\r\n\r\n.menu_mobile_part div{\r\n    min-height: 50px;\r\n    padding: 10px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    border-bottom: 1px solid #e2e2e2;\r\n}\r\n\r\n.menu_mobile_part div .active{\r\n    color: #000034;\r\n}\r\n\r\n.menu_mobile_part i{\r\n    font-size: 20px;\r\n}\r\n\r\n@media (max-width: 403px) { \r\n    \r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".home{\r\n    background: linear-gradient(#d1d1d1, #fafafa);\r\n    overflow-x: hidden;\r\n    height: 100%;\r\n    overflow-y: hidden;\r\n}\r\n.p_header{\r\n    padding: 10px 35px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    background: linear-gradient(#fafafa, #d1d1d1);\r\n    border-bottom: 1px #f0f0f0 solid;  \r\n}\r\n\r\n.p_header span{\r\n    color:#000034;\r\n    font-weight: 400;\r\n}\r\n\r\n.p_content{\r\n    height: calc( 100% - 90px );\r\n    overflow-y: auto;\r\n}\r\n\r\n.p_header i{\r\n    color:grey;\r\n}\r\n\r\n.p_content_l a{\r\n    color:#000034;\r\n    padding: 10px 0px;\r\n    width: 100%;\r\n    text-align: left;\r\n    padding-left: 35px;\r\n}\r\n\r\n.p_content_l a.active{\r\n    color: #ffffff;\r\n    background: rgb(29,49,74);\r\n    background: linear-gradient(to right, #000034 0%,rgb(39, 39, 93) 50%,#000034 100%);\r\n}\r\n\r\n.p_content_l img{\r\n    width: 20px;\r\n}\r\n\r\n.p_content_l{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    width: 200px;\r\n    float: left;\r\n    padding-top: 15%;\r\n}\r\n\r\n.p_content_r{\r\n    float: right;\r\n    background-color: #f0f0f0;    \r\n    padding: 35px 65px;\r\n    width: calc( 100% - 200px );\r\n    height: calc( 100% - 80px );\r\n}\r\n\r\n.btnfile:hover{\r\n    background-color: transparent;\r\n    cursor: pointer;\r\n}\r\n#myfile1{\r\n    cursor: pointer;\r\n    padding: 0px;\r\n    margin: 0px;\r\n    height: 44px;\r\n    width: 170px;\r\n}\r\n\r\n.title{\r\n    color: #000034;\r\n    font-size: 20px;\r\n    text-align: left;\r\n    padding-bottom: 20px;\r\n    font-weight: 800;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n}\r\n\r\n.title span{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    font-weight: 100;\r\n    font-size: 14px;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.c_r{\r\n    float: right;\r\n    width: 50%;\r\n}\r\n\r\n.c_l{\r\n    float: left;\r\n    width: 100%;\r\n    background-color: #e2e2e2;\r\n    padding: 20px;\r\n}\r\n\r\n.upload-panel{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: space-evenly;\r\n        -ms-flex-pack: space-evenly;\r\n            justify-content: space-evenly;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.c_title{\r\n    font-size: 15px;\r\n    color: #f4f4f4;\r\n    text-align: left;\r\n}\r\n\r\n.c_r_t, .c_l_t, .c_l_b, .c_r_b{\r\n    background-color: #1e3046;\r\n    padding: 20px;\r\n    border-radius: 3px;\r\n    text-align: right;\r\n}\r\n\r\n.c_l_t{\r\n    margin-right: 10px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.c_r_t{\r\n    margin-left: 10px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\r\n    height: 225px;\r\n}\r\n\r\n.c_l_b{\r\n    margin-right: 10px;\r\n    margin-top: 20px;\r\n}\r\n\r\n.c_r_b{\r\n    margin-left: 10px;\r\n    margin-top: 20px;\r\n    text-align: left;\r\n}\r\n\r\nhr{\r\n    border-color: #d0d4d8;\r\n}\r\n\r\n\r\n.c_l_b_lbl{\r\n    text-align: left;\r\n    color: #818892;\r\n}\r\n\r\n.c_r_t .c_title span{\r\n    color: #ecedee;\r\n}\r\n\r\n.c_r_t_lbl{\r\n    margin-top: 20px;\r\n    color: #717a88;\r\n    word-wrap: break-word;\r\n}\r\n\r\ntable{\r\n    width: 100%; \r\n    min-width: 360px;   \r\n}\r\n\r\nth{\r\n    color: #000034;\r\n    font-weight: 100;\r\n    height: 40px;\r\n    padding-left: 10px;\r\n}\r\n\r\ntd{\r\n    color: #848a9c;\r\n    padding-left: 10px;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n}\r\n\r\ntd.download{\r\n    color: #20c1ae;\r\n}\r\n\r\ntr{\r\n    /* height: 40px; */\r\n}\r\n\r\n.tdborder{\r\n    border-bottom-right-radius: 3px;\r\n    border-top-right-radius: 3px; \r\n}\r\n\r\ntr td:first-child{\r\n    border-bottom-left-radius: 3px;\r\n    border-top-left-radius: 3px;\r\n}\r\n\r\n::-webkit-input-placeholder { /* Chrome/Opera/Safari */\r\n    color: #717a88;\r\n}\r\n::-moz-placeholder { /* Firefox 19+ */\r\n    color: #717a88;\r\n}\r\n:-ms-input-placeholder { /* IE 10+ */\r\n    color: #717a88;\r\n}\r\n:-moz-placeholder { /* Firefox 18- */\r\n    color: #717a88;\r\n}\r\n\r\n.upload-btn-wrapper {\r\n    position: relative;\r\n    overflow: hidden;\r\n    display: inline-block;\r\n    width: 170px;\r\n}\r\n\r\n.btnfile {\r\n    border: 1px dashed #293a4f;\r\n    color: #d3d4d8;\r\n    background-color: transparent;\r\n}\r\n\r\n.upload-btn-wrapper input[type=file] {\r\n    font-size: 100px;\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    opacity: 0;\r\n}\r\n\r\n.cursor{\r\n    cursor: pointer;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    width: 5px;\r\n}\r\n\r\n/* Track */\r\n::-webkit-scrollbar-track {\r\n    background: #000034;\r\n    border: 1px solid transparent;\r\n    background-clip: content-box;   /* THIS IS IMPORTANT */\r\n}\r\n\r\n/* Handle */\r\n::-webkit-scrollbar-thumb {\r\n    background: #d3d4d8;\r\n    border: 1px solid #d3d4d8;\r\n    border-radius: 3px;\r\n}\r\n\r\n.fa-pause, .fa-play{\r\n    border: 1px solid #717a88;\r\n    border-radius: 50%;\r\n    font-size: 10px;\r\n    width: 20px;\r\n    height: 20px;\r\n    color: white;\r\n    padding-top: 4px;\r\n    padding-left: 1px;\r\n}\r\n\r\n\r\n.table_div{\r\n    height: 600px;  \r\n    overflow-y: auto;\r\n    overflow-x: auto;\r\n    padding-right: 10px;\r\n}\r\n\r\n.menu_mobile{\r\n    display: none;\r\n}\r\n\r\n.menu_mobile_part div:last-child{\r\n    border-bottom-width: 0px;\r\n}\r\n\r\n.menu_browser{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n@media (max-width: 1178px) { \r\n    .c_l, .c_r{\r\n        width: 100%;\r\n    }\r\n\r\n    .c_r_t, .c_l_b, .c_l_t, .c_r_b{\r\n        margin: 0px;\r\n        margin-top: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width: 735px) { \r\n    .p_content_l{\r\n        display: none;\r\n    }\r\n    .menu_mobile{\r\n        display: block;\r\n    }\r\n\r\n    .menu_browser{\r\n        display: none;\r\n    }\r\n\r\n    .p_content_r{\r\n        width: 100%;\r\n        padding: 35px 25px;\r\n    }\r\n\r\n    /* .p_header i{\r\n        font-size: 20px;\r\n    }\r\n\r\n    .p_header i.active{\r\n        color: #21cdb8;        \r\n    } */\r\n}\r\n\r\n.menu_mobile_part{\r\n    position: absolute;\r\n    top: 67px;\r\n    right: 0px;\r\n    background-color: #f0f0f0;\r\n    border-radius: 5px;\r\n    border: 1px solid #e2e2e2;\r\n    padding: 0px 10px;\r\n    padding-top: 10px;\r\n    z-index: 99;\r\n    color:#848a9c;\r\n}\r\n\r\n.menu_mobile_part div{\r\n    min-height: 50px;\r\n    padding: 10px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    border-bottom: 1px solid #e2e2e2;\r\n}\r\n\r\n.menu_mobile_part div .active{\r\n    color: #000034;\r\n}\r\n\r\n.menu_mobile_part i{\r\n    font-size: 20px;\r\n}\r\n\r\n@media (max-width: 403px) { \r\n    \r\n}\r\n\r\nbutton{\r\n    background: linear-gradient(#000034, #141454);\r\n    border: none;\r\n    border-radius: 3px;\r\n    color: #e2e2e2;\r\n    padding: 9px 20px;\r\n    cursor: pointer;\r\n}\r\nbutton:hover { \r\n    background: linear-gradient(#141454, #141454);\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -1257,7 +1274,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/past/past.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home text-center\">\r\n    <div style=\"position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: rgba(6, 10, 14, 0.8);\r\n    z-index: 9999;\" *ngIf=\"showloading\">\r\n        <img src=\"../assets/images/loader.gif\" height=\"50px\">\r\n    </div>\r\n        \r\n\t<div class=\"p_header\">\r\n        <img src=\"../assets/images/logo7.png\" height=\"70px\">\r\n        <i class=\"fa fa-bars menu_mobile\" (click)=\"onDropdown()\"></i>\r\n        <div class=\"menu_browser cursor\" (click)=\"onDropdownBrowser()\">\r\n            <img style=\"width:40px;\" src=\"../assets/images/user.png\">            \r\n            <span>&nbsp;&nbsp;&nbsp;{{email}}</span>                            \r\n        </div>\r\n    </div>\r\n    <div *ngIf=\"dropB\" class=\"menu_mobile_part\">\r\n        <div (click)=\"home()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;&nbsp;Current Session</div>\r\n        <div (click)=\"past()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-history active\"></i>&nbsp;&nbsp;&nbsp;Past Session</div>\r\n        <div (click)=\"logout()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-sign-out\"></i>&nbsp;&nbsp;&nbsp;Logout</div>\r\n    </div>\r\n    <div *ngIf=\"drop\" class=\"menu_mobile_part\">\r\n        <div style=\"display:flex;flex-direction: column;\"><img style=\"width:40px;\" src=\"../assets/images/user.png\"><span>{{email}}</span></div>\r\n        <div (click)=\"home()\"><i class=\"fa fa-microphone active\"></i></div>\r\n        <div (click)=\"past()\"><i class=\"fa fa-history\"></i></div>\r\n        <div (click)=\"logout()\"><i class=\"fa fa-sign-out\"></i></div>\r\n    </div>\r\n    <div class=\"p_content\">\r\n        <div class=\"p_content_l\">\r\n            <a (click)=\"home()\" class=\"cursor\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;Current Session</a>\r\n            <a class=\"active cursor\" (click)=\"past()\"><i class=\"fa fa-history\"></i>&nbsp;&nbsp;Past Session</a>\r\n        </div>       \r\n        <div class=\"p_content_r\">\r\n            <div class=\"title\">Past Session\r\n                <span>offline&nbsp;&nbsp;<ui-switch color=\"#000034\" [(ngModel)]=\"availability\" (change)=\"onToggleChange($event)\"></ui-switch>&nbsp;&nbsp;online</span>\r\n            </div>\r\n            \r\n            <div class=\"c_l\">\r\n                <div class=\"c_title\">&nbsp;</div>\r\n                <hr>\r\n                <div class=\"table_div\">\r\n                    <table>\r\n                        <thead>\r\n                            <th>#</th>\r\n                            <th>Session ID</th>\r\n                            <th>Date / Time</th>\r\n                            <th>Singer</th>\r\n                            <th>Song Name</th>\r\n                            <th>Status</th>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let item of pastKeyList; let i = index;\" [ngStyle]=\"getStyle(i)\" (click)=\"goHome(i)\">\r\n                                <td>{{i+1}}</td>\r\n                                <td>{{item}}</td>\r\n                                <td>{{pastList[i].startTime | date:'medium'}}</td>\r\n                                <td>{{pastList[i].username}}</td>\r\n                                <td>{{pastList[i].title}}</td>\r\n                                <td>{{pastList[i].status}}</td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>               \r\n            </div>\r\n        </div>\r\n    </div>    \r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div class=\"home text-center\">\r\n    <div style=\"position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: rgba(6, 10, 14, 0.8);\r\n    z-index: 9999;\" *ngIf=\"showloading\">\r\n        <img src=\"../assets/images/loader.gif\" height=\"50px\">\r\n    </div>\r\n        \r\n\t<div class=\"p_header\">\r\n        <img src=\"../assets/images/logo7.png\" height=\"70px\">\r\n        <i class=\"fa fa-bars menu_mobile\" (click)=\"onDropdown()\"></i>\r\n        <div class=\"menu_browser cursor\" (click)=\"onDropdownBrowser()\">\r\n            <img style=\"width:40px;\" src=\"../assets/images/user.png\">            \r\n            <span>&nbsp;&nbsp;&nbsp;{{email}}</span>                            \r\n        </div>\r\n    </div>\r\n    <div *ngIf=\"dropB\" class=\"menu_mobile_part\">\r\n        <div (click)=\"home()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;&nbsp;Current Session</div>\r\n        <div (click)=\"past()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-history active\"></i>&nbsp;&nbsp;&nbsp;Past Session</div>\r\n        <div (click)=\"logout()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-sign-out\"></i>&nbsp;&nbsp;&nbsp;Logout</div>\r\n    </div>\r\n    <div *ngIf=\"drop\" class=\"menu_mobile_part\">\r\n        <div style=\"display:flex;flex-direction: column;\"><img style=\"width:40px;\" src=\"../assets/images/user.png\"><span>{{email}}</span></div>\r\n        <div (click)=\"home()\"><i class=\"fa fa-microphone active\"></i></div>\r\n        <div (click)=\"past()\"><i class=\"fa fa-history\"></i></div>\r\n        <div (click)=\"logout()\"><i class=\"fa fa-sign-out\"></i></div>\r\n    </div>\r\n    <div class=\"p_content\">\r\n        <div class=\"p_content_l\">\r\n            <a (click)=\"home()\" class=\"cursor\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;Current Session</a>\r\n            <a class=\"active cursor\" (click)=\"past()\"><i class=\"fa fa-history\"></i>&nbsp;&nbsp;Past Session</a>\r\n        </div>       \r\n        <div class=\"p_content_r\">\r\n            <div class=\"title\">Past Session\r\n                <span>offline&nbsp;&nbsp;<ui-switch color=\"#000034\" [(ngModel)]=\"availability\" (change)=\"onToggleChange($event)\"></ui-switch>&nbsp;&nbsp;online</span>\r\n            </div>\r\n            \r\n            <div class=\"c_l\">\r\n                <div class=\"c_title\">&nbsp;</div>\r\n                <hr>\r\n                <div class=\"table_div\">\r\n                    <table>\r\n                        <thead>\r\n                            <th>#</th>\r\n                            <th>Session ID</th>\r\n                            <th>Date / Time</th>\r\n                            <th>Singer</th>\r\n                            <th>Song Name</th>\r\n                            <th>Status</th>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let item of pastKeyList; let i = index;\" [ngStyle]=\"getStyle(i)\" (click)=\"goHome(i)\">\r\n                                <td>{{i+1}}</td>\r\n                                <td>{{item}}</td>\r\n                                <td>{{pastList[i].startTime | date:'medium'}}</td>\r\n                                <td>{{pastList[i].username}}</td>\r\n                                <td>{{pastList[i].title}}</td>\r\n                                <td>{{pastList[i].status}}</td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>                          \r\n            </div>         \r\n        </div>\r\n\r\n        <div class=\"p_content_r\">\r\n            <div class=\"title\">Finished Songs\r\n                <span><button (click)=\"onAddSong()\">{{strAddSong}}</button></span>\r\n            </div>\r\n            <div class=\"c_l upload-panel\" *ngIf=\"isAddSong\">            \r\n                <mat-form-field>\r\n                    <mat-select placeholder=\"Choose Song\" (change)=\"onSelectSong($event.value)\">\r\n                      <mat-option *ngFor=\"let user of lyricsList\" [value]=\"user\">\r\n                        {{user.title}} - {{user.username}}\r\n                      </mat-option>\r\n                    </mat-select>\r\n                </mat-form-field> \r\n                <div class=\"upload-btn-wrapper c_l_b_file\" (click)=\"clearSelectedFile()\" *ngIf=\"!isObjectEmpty(currentSelectedSong) && !selectedFiles\">\r\n                    <button class=\"btnfile\">Click here to upload</button>\r\n                    <input type=\"file\" (change)=\"detectFiles($event)\" id=\"myfile1\" name=\"myfile1\" multiple=\"false\" />                    \r\n                </div>\r\n                <span  class=\"c_l_b_lbl c_l_b_lbl_filename\" *ngIf=\"selectedFiles\">{{ selectedFiles[selectedFileInx].name }}</span>&nbsp;&nbsp;&nbsp;&nbsp;\r\n                <span  class=\"c_l_b_lbl\" *ngIf=\"showpercent\">{{ currentUpload?.progress }} % complete</span>\r\n                <button *ngIf=\"selectedFiles && !isObjectEmpty(currentSelectedSong)\" (click)=\"uploadSingle()\">Send Loop</button>  \r\n            </div>\r\n            <div class=\"c_l\">\r\n                <div class=\"c_title\">&nbsp;</div>\r\n                <hr>\r\n                <div class=\"table_div\">\r\n                    <table>\r\n                        <thead>\r\n                            <th>#</th>\r\n                            <th>Singer Name</th>\r\n                            <th>Song Name</th>                            \r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let item of fsList; let i = index;\" [ngStyle]=\"getStyle(i)\">\r\n                                <td>{{i+1}}</td>\r\n                                <td>{{item.singerName}}</td>\r\n                                <td>{{item.title}}</td>                                                         \r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>                          \r\n            </div>                   \r\n        </div>\r\n    </div>    \r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -1271,6 +1288,8 @@ module.exports = "<div class=\"home text-center\">\r\n    <div style=\"position:
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_sweetalert2__ = __webpack_require__("../../../../ng2-sweetalert2/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng2_sweetalert2__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Upload__ = __webpack_require__("../../../../../src/app/past/Upload.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__provider_UploadService__ = __webpack_require__("../../../../../src/app/provider/UploadService.ts");
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -1292,17 +1311,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var PastComponent = (function () {
-    function PastComponent(swalService, af, router) {
+    function PastComponent(swalService, af, router, upSvc) {
         this.swalService = swalService;
         this.af = af;
         this.router = router;
+        this.upSvc = upSvc;
         this.pastList = [];
         this.pastKeyList = [];
         this.drop = false;
         this.dropB = false;
         this.email = "";
         this.availability = false;
+        this.userList = [];
+        this.lyricsList = [];
+        this.isAddSong = false;
+        this.selectedFiles = null;
+        this.selectedFileInx = 0;
+        this.showpercent = false;
+        this.currentSelectedSong = {};
+        this.fsList = [];
+        this.strAddSong = "+ Song";
         this.email = localStorage.getItem("email");
         this.itemsRef = af.list('producer');
     }
@@ -1311,6 +1342,19 @@ var PastComponent = (function () {
     };
     PastComponent.prototype.onDropdownBrowser = function () {
         this.dropB = !this.dropB;
+    };
+    PastComponent.prototype.onAddSong = function () {
+        this.isAddSong = !this.isAddSong;
+        this.strAddSong = this.strAddSong == "- Close" ? "+ Song" : "- Close";
+        this.currentSelectedSong = {};
+        this.selectedFiles = null;
+        if (this.currentUpload) {
+            this.showpercent = false;
+            this.currentUpload = null;
+        }
+    };
+    PastComponent.prototype.isObjectEmpty = function (obj) {
+        return Object.keys(obj).length == 0;
     };
     PastComponent.prototype.getStyle = function (inx) {
         var myStyles = {
@@ -1324,6 +1368,16 @@ var PastComponent = (function () {
     };
     PastComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.af.list('fauploads').snapshotChanges().map(function (actions3) {
+            return actions3.map(function (actions3) { return (__assign({ key: actions3.key }, actions3.payload.val())); });
+        }).subscribe(function (items3) {
+            _this.fsList = [];
+            items3.forEach(function (element) {
+                if (element.producerId == localStorage.getItem("id")) {
+                    _this.fsList.push(element);
+                }
+            });
+        });
         this.af.list('producer').snapshotChanges().map(function (actions) {
             return actions.map(function (action) { return (__assign({ key: action.key }, action.payload.val())); });
         }).subscribe(function (items) {
@@ -1340,24 +1394,36 @@ var PastComponent = (function () {
             _this.af.list('lyrics').snapshotChanges().map(function (actions1) {
                 return actions1.map(function (action1) { return (__assign({ key: action1.key }, action1.payload.val())); });
             }).subscribe(function (items1) {
-                _this.pastList.forEach(function (element) {
-                    items1.forEach(function (lyrics) {
-                        var lyricsKeyList = Object.keys(lyrics);
-                        var lyricsList = Object.keys(lyrics).map(function (key) { return lyrics[key]; });
+                _this.lyricsList = [];
+                items1.forEach(function (lyrics) {
+                    var lyricsKeyList = Object.keys(lyrics);
+                    var lyricsList = Object.keys(lyrics).map(function (key) { return lyrics[key]; });
+                    for (var i = 1; i < lyricsList.length; i++) {
+                        lyricsList[i]['userId'] = lyricsList[0];
+                        lyricsList[i]['lyricsKey'] = lyricsKeyList[i];
+                        _this.lyricsList.push(lyricsList[i]);
+                    }
+                    _this.pastList.forEach(function (element) {
                         if (lyricsKeyList.indexOf(element.lyricsId) != -1) {
                             element['title'] = lyricsList[lyricsKeyList.indexOf(element.lyricsId)].title;
                         }
                     });
                 });
-            });
-            _this.af.list('users').snapshotChanges().map(function (actions2) {
-                return actions2.map(function (action2) { return (__assign({ key: action2.key }, action2.payload.val())); });
-            }).subscribe(function (items2) {
-                items2.forEach(function (element2) {
-                    _this.pastList.forEach(function (pelement) {
-                        if (element2.key == pelement.userId) {
-                            pelement['username'] = element2.name;
-                        }
+                _this.af.list('users').snapshotChanges().map(function (actions2) {
+                    return actions2.map(function (action2) { return (__assign({ key: action2.key }, action2.payload.val())); });
+                }).subscribe(function (items2) {
+                    _this.userList = items2;
+                    items2.forEach(function (element2) {
+                        _this.pastList.forEach(function (pelement) {
+                            if (element2.key == pelement.userId) {
+                                pelement['username'] = element2.name;
+                            }
+                        });
+                        _this.lyricsList.forEach(function (element3) {
+                            if (element2.key == element3['userId']) {
+                                element3['username'] = element2.name;
+                            }
+                        });
                     });
                 });
             });
@@ -1409,6 +1475,22 @@ var PastComponent = (function () {
         this.drop = false;
         window.location.href = "/home";
     };
+    PastComponent.prototype.detectFiles = function (event) {
+        this.selectedFiles = event.target.files;
+    };
+    PastComponent.prototype.clearSelectedFile = function () {
+        if (this.currentUpload)
+            this.currentUpload.progress = 0;
+    };
+    PastComponent.prototype.uploadSingle = function () {
+        this.showpercent = true;
+        var file = this.selectedFiles.item(0);
+        this.currentUpload = new __WEBPACK_IMPORTED_MODULE_4__Upload__["a" /* UploadFS */](file);
+        this.upSvc.pushUploadFS(this.currentUpload, this.currentSelectedSong);
+    };
+    PastComponent.prototype.onSelectSong = function (user) {
+        this.currentSelectedSong = user;
+    };
     return PastComponent;
 }());
 PastComponent = __decorate([
@@ -1417,10 +1499,10 @@ PastComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/past/past.component.html"),
         styles: [__webpack_require__("../../../../../src/app/past/past.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ng2_sweetalert2__["SweetAlertService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ng2_sweetalert2__["SweetAlertService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ng2_sweetalert2__["SweetAlertService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ng2_sweetalert2__["SweetAlertService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__provider_UploadService__["a" /* UploadService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__provider_UploadService__["a" /* UploadService */]) === "function" && _d || Object])
 ], PastComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=past.component.js.map
 
 /***/ }),
@@ -1454,6 +1536,7 @@ var UploadService = (function () {
         this.aff = aff;
         this.db = db;
         this.basePath = '/uploads';
+        this.fsBasePath = '/fauploads';
         var storageRef = __WEBPACK_IMPORTED_MODULE_3_firebase__["storage"]().ref();
         this.itemsRef = aff.list('producer');
     }
@@ -1474,10 +1557,37 @@ var UploadService = (function () {
             //upload.name = upload.file.name
             upload.name = filename;
             upload.producer = path.toString();
-            upload.producerName = producerName;
+            if (producerName == undefined)
+                upload.producerName = "";
+            else
+                upload.producerName = producerName;
             var pathStr = producerId + "/sessions/" + path.toString();
             _this.saveFileData(upload);
             _this.onUpdateClip(pathStr, filename);
+            return JSON.stringify(upload);
+        });
+    };
+    UploadService.prototype.pushUploadFS = function (upload, currentSelectedSong) {
+        var _this = this;
+        var storageRef = __WEBPACK_IMPORTED_MODULE_3_firebase__["storage"]().ref();
+        var uploadTask = storageRef.child("/" + localStorage.getItem("id").toString() + "/" + upload.file.name).put(upload.file);
+        uploadTask.on(__WEBPACK_IMPORTED_MODULE_3_firebase__["storage"].TaskEvent.STATE_CHANGED, function (snapshot) {
+            // upload in progress
+            upload.progress = (uploadTask.snapshot.bytesTransferred / uploadTask.snapshot.totalBytes) * 100;
+            upload.progress = Math.round(upload.progress * 100) / 100;
+        }, function (error) {
+            // upload failed
+            console.log(error);
+        }, function () {
+            // upload success
+            upload.url = uploadTask.snapshot.downloadURL;
+            upload.name = upload.file.name;
+            upload.singerId = currentSelectedSong.userId;
+            upload.producerId = localStorage.getItem("id").toString();
+            upload.singerName = currentSelectedSong.username;
+            upload.lyrics = currentSelectedSong.lyricsKey;
+            upload.title = currentSelectedSong.title;
+            _this.saveFSFileData(upload);
             return JSON.stringify(upload);
         });
     };
@@ -1502,6 +1612,9 @@ var UploadService = (function () {
     };
     UploadService.prototype.saveFileData = function (upload) {
         this.db.list(this.basePath + "/").push(upload);
+    };
+    UploadService.prototype.saveFSFileData = function (upload) {
+        this.db.list(this.fsBasePath + "/").push(upload);
     };
     UploadService.prototype.onUpdateClip = function (key, name) {
         this.itemsRef.update(key, { producerClip: name });
