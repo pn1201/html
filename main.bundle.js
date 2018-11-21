@@ -184,22 +184,26 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__past_past_component__ = __webpack_require__("../../../../../src/app/past/past.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__list_list_component__ = __webpack_require__("../../../../../src/app/list/list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__sharedService__ = __webpack_require__("../../../../../src/app/sharedService.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_angularfire2_database_deprecated__ = __webpack_require__("../../../../angularfire2/database-deprecated/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__provider_UploadService__ = __webpack_require__("../../../../../src/app/provider/UploadService.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__node_modules_ngx_ui_switch__ = __webpack_require__("../../../../ngx-ui-switch/ui-switch.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng_socket_io__ = __webpack_require__("../../../../ng-socket-io/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_ng_socket_io__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__payment_payment_component__ = __webpack_require__("../../../../../src/app/payment/payment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__sharedService__ = __webpack_require__("../../../../../src/app/sharedService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_angularfire2_database_deprecated__ = __webpack_require__("../../../../angularfire2/database-deprecated/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__provider_UploadService__ = __webpack_require__("../../../../../src/app/provider/UploadService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__node_modules_ngx_ui_switch__ = __webpack_require__("../../../../ngx-ui-switch/ui-switch.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ng_socket_io__ = __webpack_require__("../../../../ng-socket-io/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ng_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_ng_socket_io__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__payment_service__ = __webpack_require__("../../../../../src/app/payment.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -234,16 +238,16 @@ AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_14__app_routing__["a" /* AppRoutes */]),
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_15__app_routing__["a" /* AppRoutes */]),
             __WEBPACK_IMPORTED_MODULE_7__material_module__["a" /* MaterialModule */],
-            __WEBPACK_IMPORTED_MODULE_17_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_16__environments_environment__["b" /* firebase_config */]),
-            __WEBPACK_IMPORTED_MODULE_18_angularfire2_database__["b" /* AngularFireDatabaseModule */],
+            __WEBPACK_IMPORTED_MODULE_18_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_17__environments_environment__["b" /* firebase_config */]),
+            __WEBPACK_IMPORTED_MODULE_19_angularfire2_database__["b" /* AngularFireDatabaseModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_forms__["e" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_21__node_modules_ngx_ui_switch__["a" /* UiSwitchModule */],
+            __WEBPACK_IMPORTED_MODULE_22__node_modules_ngx_ui_switch__["a" /* UiSwitchModule */],
             // OpentokModule.forRoot({apiKey: "46114862"}),
-            __WEBPACK_IMPORTED_MODULE_22_ng_socket_io__["SocketIoModule"].forRoot(config)
+            __WEBPACK_IMPORTED_MODULE_23_ng_socket_io__["SocketIoModule"].forRoot(config)
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
@@ -251,13 +255,15 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__layouts_page_page_layout_component__["a" /* PageLayoutComponent */],
             __WEBPACK_IMPORTED_MODULE_11__home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_12__past_past_component__["a" /* PastComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__list_list_component__["a" /* ListComponent */]
+            __WEBPACK_IMPORTED_MODULE_13__list_list_component__["a" /* ListComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__payment_payment_component__["a" /* PaymentComponent */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_15__sharedService__["a" /* sharedService */],
+            __WEBPACK_IMPORTED_MODULE_16__sharedService__["a" /* sharedService */],
             __WEBPACK_IMPORTED_MODULE_6_ng2_sweetalert2__["SweetAlertService"],
-            __WEBPACK_IMPORTED_MODULE_19_angularfire2_database_deprecated__["a" /* AngularFireDatabase */],
-            __WEBPACK_IMPORTED_MODULE_20__provider_UploadService__["a" /* UploadService */]
+            __WEBPACK_IMPORTED_MODULE_20_angularfire2_database_deprecated__["a" /* AngularFireDatabase */],
+            __WEBPACK_IMPORTED_MODULE_21__provider_UploadService__["a" /* UploadService */],
+            __WEBPACK_IMPORTED_MODULE_24__payment_service__["a" /* PaymentService */]
             //Http
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
@@ -477,6 +483,17 @@ var HomeComponent = (function () {
             }
             //Evented.fire('calling', data);
         });
+        this.socket.on('cancelfromcaller', function (data) {
+            var temp = JSON.parse(data);
+            if (temp.sessionId == self.videochatSessionId) {
+                self.videoopentoksession.disconnect();
+                self.incomingcall = 0;
+                self.videochatSessionId = "";
+                self.videochatSinger = "";
+                self.videochatData = "";
+                self.endcall();
+            }
+        });
         this.socket.on('trackUploadFinishfromcaller', function (data) {
             if (data.success) {
                 this.getSesstionDetail();
@@ -519,7 +536,7 @@ var HomeComponent = (function () {
         // Subscribe to a newly created stream
         // Create a publisher
         var publisher = OT.initPublisher('publisher', {
-            //insertMode: 'append',
+            insertMode: 'append',
             width: '100px',
             height: '70px'
         }, handleError);
@@ -536,7 +553,9 @@ var HomeComponent = (function () {
             }
         });
         this.videoopentoksession.on('streamCreated', function (event) {
-            self.videoopentoksession.subscribe(event.stream, 'subscriber', {}, handleError);
+            self.videoopentoksession.subscribe(event.stream, 'subscriber', {
+                insertMode: 'append'
+            }, handleError);
         });
         function handleError(error) {
             if (error) {
@@ -1271,7 +1290,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/past/past.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home text-center\">\r\n    <div style=\"position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: rgba(6, 10, 14, 0.8);\r\n    z-index: 9999;\" *ngIf=\"showloading\">\r\n        <img src=\"../assets/images/loader.gif\" height=\"50px\">\r\n    </div>\r\n        \r\n\t<div class=\"p_header\">\r\n        <img src=\"../assets/images/logo7.png\" height=\"70px\">\r\n        <i class=\"fa fa-bars menu_mobile\" (click)=\"onDropdown()\"></i>\r\n        <div class=\"menu_browser cursor\" (click)=\"onDropdownBrowser()\">\r\n            <img style=\"width:40px;\" src=\"../assets/images/user.png\">            \r\n            <span>&nbsp;&nbsp;&nbsp;{{email}}</span>                            \r\n        </div>\r\n    </div>\r\n    <div *ngIf=\"dropB\" class=\"menu_mobile_part\">\r\n        <div (click)=\"home()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;&nbsp;Current Session</div>\r\n        <div (click)=\"past()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-history active\"></i>&nbsp;&nbsp;&nbsp;Past Session</div>\r\n        <div (click)=\"logout()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-sign-out\"></i>&nbsp;&nbsp;&nbsp;Logout</div>\r\n    </div>\r\n    <div *ngIf=\"drop\" class=\"menu_mobile_part\">\r\n        <div style=\"display:flex;flex-direction: column;\"><img style=\"width:40px;\" src=\"../assets/images/user.png\"><span>{{email}}</span></div>\r\n        <div (click)=\"home()\"><i class=\"fa fa-microphone active\"></i></div>\r\n        <div (click)=\"past()\"><i class=\"fa fa-history\"></i></div>\r\n        <div (click)=\"logout()\"><i class=\"fa fa-sign-out\"></i></div>\r\n    </div>\r\n    <div class=\"p_content\">\r\n        <div class=\"p_content_l\">\r\n            <a (click)=\"home()\" class=\"cursor\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;Current Session</a>\r\n            <a class=\"active cursor\" (click)=\"past()\"><i class=\"fa fa-history\"></i>&nbsp;&nbsp;Past Session</a>\r\n        </div>       \r\n        <div class=\"p_content_r\">\r\n            <div class=\"title\">Past Session\r\n                <span>offline&nbsp;&nbsp;<ui-switch color=\"#000034\" [(ngModel)]=\"availability\" (change)=\"onToggleChange($event)\"></ui-switch>&nbsp;&nbsp;online</span>\r\n            </div>\r\n            \r\n            <div class=\"c_l\">\r\n                <div class=\"c_title\">&nbsp;</div>\r\n                <hr>\r\n                <div class=\"table_div\">\r\n                    <table>\r\n                        <thead>\r\n                            <th>#</th>\r\n                            <th>Session ID</th>\r\n                            <th>Date / Time</th>\r\n                            <th>Singer</th>\r\n                            <th>Song Name</th>\r\n                            <th>Status</th>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let item of pastKeyList; let i = index;\" [ngStyle]=\"getStyle(i)\" (click)=\"goHome(i)\">\r\n                                <td>{{i+1}}</td>\r\n                                <td>{{item}}</td>\r\n                                <td>{{pastList[i].startTime | date:'medium'}}</td>\r\n                                <td>{{pastList[i].username}}</td>\r\n                                <td>{{pastList[i].title}}</td>\r\n                                <td>{{pastList[i].status}}</td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>                          \r\n            </div>         \r\n        </div>\r\n\r\n        <div class=\"p_content_r\">\r\n            <div class=\"title\">Finished Songs\r\n                <span><button (click)=\"onAddSong()\">{{strAddSong}}</button></span>\r\n            </div>\r\n            <div class=\"c_l upload-panel\" *ngIf=\"isAddSong\">            \r\n                <mat-form-field>\r\n                    <mat-select placeholder=\"Choose Song\" (change)=\"onSelectSong($event.value)\">\r\n                      <mat-option *ngFor=\"let user of lyricsList\" [value]=\"user\">\r\n                        {{user.title}} - {{user.username}}\r\n                      </mat-option>\r\n                    </mat-select>\r\n                </mat-form-field> \r\n                <div class=\"upload-btn-wrapper c_l_b_file\" (click)=\"clearSelectedFile()\" *ngIf=\"!isObjectEmpty(currentSelectedSong) && !selectedFiles\">\r\n                    <button class=\"btnfile\">Click here to upload</button>\r\n                    <input type=\"file\" (change)=\"detectFiles($event)\" id=\"myfile1\" name=\"myfile1\" multiple=\"false\" />                    \r\n                </div>\r\n                <span  class=\"c_l_b_lbl c_l_b_lbl_filename\" *ngIf=\"selectedFiles\">{{ selectedFiles[selectedFileInx].name }}</span>&nbsp;&nbsp;&nbsp;&nbsp;\r\n                <span  class=\"c_l_b_lbl\" *ngIf=\"showpercent\">{{ currentUpload?.progress }} % complete</span>\r\n                <button *ngIf=\"selectedFiles && !isObjectEmpty(currentSelectedSong)\" (click)=\"uploadSingle()\">Send Loop</button>  \r\n            </div>\r\n            <div class=\"c_l\">\r\n                <div class=\"c_title\">&nbsp;</div>\r\n                <hr>\r\n                <div class=\"table_div\">\r\n                    <table>\r\n                        <thead>\r\n                            <th>#</th>\r\n                            <th>Singer Name</th>\r\n                            <th>Song Name</th>                            \r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let item of fsList; let i = index;\" [ngStyle]=\"getStyle(i)\">\r\n                                <td>{{i+1}}</td>\r\n                                <td>{{item.singerName}}</td>\r\n                                <td>{{item.title}}</td>                                                         \r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>                          \r\n            </div>                   \r\n        </div>\r\n    </div>    \r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div class=\"home text-center\">\r\n    <div style=\"position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: rgba(6, 10, 14, 0.8);\r\n    z-index: 9999;\" *ngIf=\"showloading\">\r\n        <img src=\"../assets/images/loader.gif\" height=\"50px\">\r\n    </div>\r\n        \r\n\t<div class=\"p_header\">\r\n        <img src=\"../assets/images/logo7.png\" height=\"70px\">\r\n        <i class=\"fa fa-bars menu_mobile\" (click)=\"onDropdown()\"></i>\r\n        <div class=\"menu_browser cursor\" (click)=\"onDropdownBrowser()\">\r\n            <img style=\"width:40px;\" src=\"../assets/images/user.png\">            \r\n            <span>&nbsp;&nbsp;&nbsp;{{email}}</span>                            \r\n        </div>\r\n    </div>\r\n    <div *ngIf=\"dropB\" class=\"menu_mobile_part\">\r\n        <div (click)=\"home()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;&nbsp;Current Session</div>\r\n        <div (click)=\"past()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-history active\"></i>&nbsp;&nbsp;&nbsp;Past Session</div>\r\n        <div (click)=\"logout()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-sign-out\"></i>&nbsp;&nbsp;&nbsp;Logout</div>\r\n    </div>\r\n    <div *ngIf=\"drop\" class=\"menu_mobile_part\">\r\n        <div style=\"display:flex;flex-direction: column;\"><img style=\"width:40px;\" src=\"../assets/images/user.png\"><span>{{email}}</span></div>\r\n        <div (click)=\"home()\"><i class=\"fa fa-microphone active\"></i></div>\r\n        <div (click)=\"past()\"><i class=\"fa fa-history\"></i></div>\r\n        <div (click)=\"logout()\"><i class=\"fa fa-sign-out\"></i></div>\r\n    </div>\r\n    <div class=\"p_content\">\r\n        <div class=\"p_content_l\">\r\n            <a (click)=\"home()\" class=\"cursor\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;Current Session</a>\r\n            <a class=\"active cursor\" (click)=\"past()\"><i class=\"fa fa-history\"></i>&nbsp;&nbsp;Past Session</a>\r\n        </div>       \r\n        <div class=\"p_content_r\">\r\n            <div class=\"title\">Past Session\r\n                <span>offline&nbsp;&nbsp;<ui-switch color=\"#000034\" [(ngModel)]=\"availability\" (change)=\"onToggleChange($event)\"></ui-switch>&nbsp;&nbsp;online</span>\r\n            </div>\r\n            \r\n            <div class=\"c_l\">\r\n                <div class=\"c_title\">&nbsp;</div>\r\n                <hr>\r\n                <div class=\"table_div\">\r\n                    <table>\r\n                        <thead>\r\n                            <th>#</th>\r\n                            <th>Session ID</th>\r\n                            <th>Date / Time</th>\r\n                            <th>Singer</th>\r\n                            <th>Song Name</th>\r\n                            <th>Status</th>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let item of pastKeyList; let i = index;\" [ngStyle]=\"getStyle(i)\" (click)=\"goHome(i)\">\r\n                                <td>{{i+1}}</td>\r\n                                <td>{{item}}</td>\r\n                                <td>{{pastList[i].startTime | date:'medium'}}</td>\r\n                                <td>{{pastList[i].username}}</td>\r\n                                <td>{{pastList[i].title}}</td>\r\n                                <td>{{pastList[i].status}}</td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>                          \r\n            </div>         \r\n        </div>\r\n\r\n        <div class=\"p_content_r\">\r\n            <div class=\"title\">Finished Songs\r\n                <span><button (click)=\"onAddSong()\">{{strAddSong}}</button></span>\r\n            </div>\r\n            <div class=\"c_l upload-panel\" *ngIf=\"isAddSong\">            \r\n                <mat-form-field>\r\n                    <mat-select placeholder=\"Choose Song\" (change)=\"onSelectSong($event.value)\">\r\n                      <mat-option *ngFor=\"let user of lyricsList\" [value]=\"user\">\r\n                        {{user.title}} - {{user.username}}\r\n                      </mat-option>\r\n                    </mat-select>\r\n                </mat-form-field> \r\n                <div class=\"upload-btn-wrapper c_l_b_file\" (click)=\"clearSelectedFile()\" *ngIf=\"!isObjectEmpty(currentSelectedSong) && !selectedFiles\">\r\n                    <button class=\"btnfile\">Click here to upload</button>\r\n                    <input type=\"file\" (change)=\"detectFiles($event)\" id=\"myfile1\" name=\"myfile1\" multiple=\"false\" />                    \r\n                </div>\r\n                <span  class=\"c_l_b_lbl c_l_b_lbl_filename\" *ngIf=\"selectedFiles\">{{ selectedFiles[selectedFileInx].name }}</span>&nbsp;&nbsp;&nbsp;&nbsp;\r\n                <span  class=\"c_l_b_lbl\" *ngIf=\"showpercent\">{{ currentUpload?.progress }} % complete</span>\r\n                <button *ngIf=\"selectedFiles && !isObjectEmpty(currentSelectedSong)\" (click)=\"uploadSingle()\">Send Loop</button>  \r\n            </div>\r\n            <div class=\"c_l\">\r\n                <div class=\"c_title\">&nbsp;</div>\r\n                <hr>\r\n                <div class=\"table_div\">\r\n                    <table>\r\n                        <thead>\r\n                            <th>#</th>\r\n                            <th>Singer Name</th>\r\n                            <th>Song Name</th>\r\n                            <th>Created At</th>\r\n                            <th>Request Payment</th>                            \r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let item of fsList; let i = index;\" [ngStyle]=\"getStyle(i)\">\r\n                                <td>{{i+1}}</td>\r\n                                <td>{{item.singerName}}</td>\r\n                                <td>{{item.title}}</td>\r\n                                <td>{{item.createdDate | date:'medium'}}</td>\r\n                                <th><a href=\"javascript:;\">Request Payment</a></th>                                                         \r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>                          \r\n            </div>                   \r\n        </div>\r\n    </div>    \r\n</div>\r\n<payment [amount]=\"10\" [label]=\"'Dollar'\"></payment>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -1504,6 +1523,204 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
+/***/ "../../../../../src/app/payment.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymentService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PaymentService = (function () {
+    function PaymentService() {
+        this.stripe = Stripe('pk_test_6eSOu8VvdcgNKpiENvJ4DRJq');
+    }
+    return PaymentService;
+}());
+PaymentService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [])
+], PaymentService);
+
+//# sourceMappingURL=payment.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payment/payment.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payment/payment.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div #payElement>\r\n    <!-- A Stripe Element will be inserted here. -->\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payment/payment.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__payment_service__ = __webpack_require__("../../../../../src/app/payment.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+var PaymentComponent = (function () {
+    function PaymentComponent(pmt) {
+        this.pmt = pmt;
+    }
+    PaymentComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        // 1. instantiate a paymentRequest object
+        this.paymentRequest = this.pmt.stripe.paymentRequest({
+            country: 'US',
+            currency: 'usd',
+            total: {
+                amount: this.amount,
+                label: this.label,
+            },
+        });
+        // 2. initalize elements
+        this.elements = this.pmt.stripe.elements();
+        // 3. register listener
+        this.paymentRequest.on('source', function (event) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                console.log(event);
+                // Fires when the user submits their card
+                // Make an HTTP call to charge on the backend (using a timeout to simulate the response)
+                setTimeout(function () {
+                    event.complete('success');
+                }, 1000);
+                return [2 /*return*/];
+            });
+        }); });
+        // 4. create the button
+        this.prButton = this.elements.create('paymentRequestButton', {
+            paymentRequest: this.paymentRequest,
+            style: {
+                paymentRequestButton: {
+                    type: 'buy',
+                    theme: 'dark' // 'dark' | 'light' | 'light-outline', 
+                },
+            }
+        });
+        // 5. mount the button asynchronously
+        this.mountButton();
+    };
+    PaymentComponent.prototype.mountButton = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.paymentRequest.canMakePayment()];
+                    case 1:
+                        result = _a.sent();
+                        if (result) {
+                            this.prButton.mount(this.payElement.nativeElement);
+                        }
+                        else {
+                            console.error('your browser is old school!');
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return PaymentComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Number)
+], PaymentComponent.prototype, "amount", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", String)
+], PaymentComponent.prototype, "label", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('payElement'),
+    __metadata("design:type", Object)
+], PaymentComponent.prototype, "payElement", void 0);
+PaymentComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'payment',
+        template: __webpack_require__("../../../../../src/app/payment/payment.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payment/payment.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__payment_service__["a" /* PaymentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__payment_service__["a" /* PaymentService */]) === "function" && _a || Object])
+], PaymentComponent);
+
+var _a;
+//# sourceMappingURL=payment.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/provider/UploadService.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1584,6 +1801,8 @@ var UploadService = (function () {
             upload.singerName = currentSelectedSong.username;
             upload.lyrics = currentSelectedSong.lyricsKey;
             upload.title = currentSelectedSong.title;
+            var today = new Date().getTime();
+            upload.createdDate = today;
             _this.saveFSFileData(upload);
             return JSON.stringify(upload);
         });
@@ -1611,6 +1830,7 @@ var UploadService = (function () {
         this.db.list(this.basePath + "/").push(upload);
     };
     UploadService.prototype.saveFSFileData = function (upload) {
+        console.log(upload);
         this.db.list(this.fsBasePath + "/").push(upload);
     };
     UploadService.prototype.onUpdateClip = function (key, name) {
