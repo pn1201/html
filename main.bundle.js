@@ -527,14 +527,14 @@ var HomeComponent = (function () {
         this.videochatData = "";
     };
     HomeComponent.prototype.initializeSession = function (data) {
-        if (this.videoopentoksession) {
-            this.videoopentoksession.disconnect();
-            this.incomingcall = 0;
-            this.videochatSessionId = "";
-            this.videochatSinger = "";
-            this.videochatData = "";
-            this.endcall();
-        }
+        // if (this.videoopentoksession) {
+        //   this.videoopentoksession.disconnect();
+        //   this.incomingcall = 0;
+        //   this.videochatSessionId = "";
+        //   this.videochatSinger = "";
+        //   this.videochatData = "";
+        //   this.endcall();
+        // }
         this.videoopentoksession = OT.initSession("46114862", data.sessionId);
         // Subscribe to a newly created stream
         // Create a publisher
