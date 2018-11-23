@@ -477,7 +477,8 @@ var HomeComponent = (function () {
             var temp = JSON.parse(data);
             var hexString = parseFloat(temp.timestamp).toString(32);
             if (hexString == self.sesstionID) {
-                self.videoopentoksession.disconnect();
+                if (self.videoopentoksession)
+                    self.videoopentoksession.disconnect();
                 self.incomingcall = 0;
                 self.videochatSessionId = "";
                 self.videochatSinger = "";
