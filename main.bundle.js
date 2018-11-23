@@ -513,6 +513,7 @@ var HomeComponent = (function () {
     HomeComponent.prototype.declinecall = function () {
         this.pauseAudio();
         this.incomingcall = 0;
+        this.videoopentoksession.disconnect();
         this.sendMessage(JSON.stringify(this.videochatData), "decline");
         this.videochatSessionId = "";
         this.videochatSinger = "";
