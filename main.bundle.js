@@ -566,9 +566,7 @@ var HomeComponent = (function () {
             console.log("$");
             console.log(self.videoopentoksession);
             console.log("!");
-            self.videoopentoksession.subscribe(event.stream, 'subscriber', {
-                insertMode: 'append'
-            }, handleError);
+            self.videoopentoksession.subscribe(event.stream, 'subscriber', {}, handleError);
         });
         function handleError(error) {
             if (error) {
