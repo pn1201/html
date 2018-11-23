@@ -535,6 +535,7 @@ var HomeComponent = (function () {
         //   this.videochatData = "";
         //   this.endcall();
         // }
+        console.log(this.videoopentoksession);
         this.videoopentoksession = OT.initSession("46114862", data.sessionId);
         // Subscribe to a newly created stream
         // Create a publisher
