@@ -575,7 +575,9 @@ var HomeComponent = (function () {
             console.log("$");
             console.log(self.videoopentoksession);
             console.log("!");
-            self.videoopentoksession.subscribe(event.stream, 'subscriber', {}, handleError);
+            self.videoopentoksession.subscribe(event.stream, 'subscriber', {
+                insertMode: 'append'
+            }, handleError);
         });
         this.videoopentoksession.on('sessionDisconnected', function (event) {
             self.isConnected = false;
