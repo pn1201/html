@@ -561,6 +561,11 @@ var HomeComponent = (function () {
             }
         });
         this.videoopentoksession.on('streamCreated', function (event) {
+            console.log("#");
+            console.log(event);
+            console.log("$");
+            console.log(self.videoopentoksession);
+            console.log("!");
             self.videoopentoksession.subscribe(event.stream, 'subscriber', {
                 insertMode: 'append'
             }, handleError);
@@ -784,8 +789,8 @@ var HomeComponent = (function () {
                         btnClass: 'btn-primary',
                         keys: ['enter'],
                         action: function () {
-                            this.dropB = false;
-                            this.drop = false;
+                            self.dropB = false;
+                            self.drop = false;
                         }
                     }
                 }
