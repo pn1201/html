@@ -420,6 +420,7 @@ var HomeComponent = (function () {
         this.videochatData = "";
         this.firebasesession = "";
         this.videoopentoksession = null;
+        this.isConnected = false;
         this.itemsRef = af.list('producer');
         this.lyricsRef = af.list('lyrics');
         this.items = this.itemsRef.valueChanges();
@@ -516,8 +517,6 @@ var HomeComponent = (function () {
     HomeComponent.prototype.declinecall = function () {
         this.pauseAudio();
         this.incomingcall = 0;
-        if (this.videoopentoksession != null)
-            this.videoopentoksession.disconnect();
         this.sendMessage(JSON.stringify(this.videochatData), "decline");
         this.videochatSessionId = "";
         this.videochatSinger = "";
@@ -526,7 +525,9 @@ var HomeComponent = (function () {
     HomeComponent.prototype.endcall = function () {
         this.sendMessage(JSON.stringify(this.videochatData), "end");
         console.log(this.videoopentoksession);
-        this.videoopentoksession.disconnect();
+        if (!!this.videoopentoksession) {
+            this.videoopentoksession.disconnect();
+        }
         console.log(this.videoopentoksession);
         this.incomingcall = 0;
         this.videochatSessionId = "";
@@ -534,6 +535,10 @@ var HomeComponent = (function () {
         this.videochatData = "";
     };
     HomeComponent.prototype.initializeSession = function (data) {
+        if (this.isConnected) {
+            console.log('We are alreaady connected!');
+            return;
+        }
         // if (this.videoopentoksession) {
         //   this.videoopentoksession.disconnect();
         //   this.incomingcall = 0;
@@ -559,6 +564,7 @@ var HomeComponent = (function () {
                 handleError(error);
             }
             else {
+                self.isConnected = true;
                 self.videoopentoksession.publish(publisher, handleError);
                 resizePublisher();
             }
@@ -570,6 +576,9 @@ var HomeComponent = (function () {
             console.log(self.videoopentoksession);
             console.log("!");
             self.videoopentoksession.subscribe(event.stream, 'subscriber', {}, handleError);
+        });
+        this.videoopentoksession.on('sessionDisconnected', function (event) {
+            self.isConnected = false;
         });
         function handleError(error) {
             if (error) {
