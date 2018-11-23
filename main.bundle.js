@@ -506,6 +506,8 @@ var HomeComponent = (function () {
     HomeComponent.prototype.answertocall = function () {
         this.pauseAudio();
         this.incomingcall = 2;
+        if (this.videoopentoksession != null)
+            this.videoopentoksession.disconnect();
         this.sendMessage(JSON.stringify(this.videochatData), "answer");
         this.initializeSession(this.videochatData);
         this.getSesstionDetail();
@@ -513,7 +515,8 @@ var HomeComponent = (function () {
     HomeComponent.prototype.declinecall = function () {
         this.pauseAudio();
         this.incomingcall = 0;
-        this.videoopentoksession.disconnect();
+        if (this.videoopentoksession != null)
+            this.videoopentoksession.disconnect();
         this.sendMessage(JSON.stringify(this.videochatData), "decline");
         this.videochatSessionId = "";
         this.videochatSinger = "";
