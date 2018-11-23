@@ -473,7 +473,8 @@ var HomeComponent = (function () {
         });
         this.socket.on('endfromcaller', function (data) {
             var temp = JSON.parse(data);
-            if (temp.sessionId == self.videochatSessionId) {
+            var hexString = parseFloat(temp.timestamp).toString(32);
+            if (hexString == self.videochatSessionId) {
                 self.videoopentoksession.disconnect();
                 self.incomingcall = 0;
                 self.videochatSessionId = "";
