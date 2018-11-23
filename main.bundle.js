@@ -426,6 +426,7 @@ var HomeComponent = (function () {
         this.sesstionID = localStorage.getItem("pastID");
         this.email = localStorage.getItem("email");
         this.getSesstionDetail = this.getSesstionDetail.bind(this);
+        this.endcall = this.endcall.bind(this);
         router.events.subscribe(function (event) {
             if (event instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ResolveEnd */] && event.url == "/home") {
                 _this.sesstionID = localStorage.getItem("pastID");
@@ -524,7 +525,9 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.endcall = function () {
         this.sendMessage(JSON.stringify(this.videochatData), "end");
+        console.log(this.videoopentoksession);
         this.videoopentoksession.disconnect();
+        console.log(this.videoopentoksession);
         this.incomingcall = 0;
         this.videochatSessionId = "";
         this.videochatSinger = "";
