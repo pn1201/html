@@ -476,7 +476,7 @@ var HomeComponent = (function () {
         this.socket.on('endfromcaller', function (data) {
             var temp = JSON.parse(data);
             var hexString = parseFloat(temp.timestamp).toString(32);
-            if (hexString == self.videochatSessionId) {
+            if (hexString == self.sesstionID) {
                 self.videoopentoksession.disconnect();
                 self.incomingcall = 0;
                 self.videochatSessionId = "";
@@ -570,11 +570,7 @@ var HomeComponent = (function () {
             }
         });
         this.videoopentoksession.on('streamCreated', function (event) {
-            console.log("#");
-            console.log(event);
-            console.log("$");
-            console.log(self.videoopentoksession);
-            console.log("!");
+            self.videoopentoksession.unsbuscribe();
             self.videoopentoksession.subscribe(event.stream, 'subscriber', {
                 insertMode: 'append'
             }, handleError);
