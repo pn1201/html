@@ -571,7 +571,7 @@ var HomeComponent = (function () {
             }
         });
         this.videoopentoksession.on('streamCreated', function (event) {
-            self.videoopentoksession.unsbuscribe();
+            //self.videoopentoksession.unsbuscribe()
             self.videoopentoksession.subscribe(event.stream, 'subscriber', {
                 insertMode: 'append'
             }, handleError);
