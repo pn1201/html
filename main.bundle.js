@@ -463,7 +463,9 @@ var HomeComponent = (function () {
         this.availability = true;
         var self = this;
         this.socket.on('ping', function (msg) {
-            alert(msg);
+            if (msg == undefined) {
+                console.log("socket is undefined");
+            }
         });
         this.socket.on('calltoreceiver', function (data) {
             self.playAudio();
