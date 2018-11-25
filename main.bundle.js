@@ -350,7 +350,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home text-center\">\r\n    <div style=\"position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: rgba(6, 10, 14, 0.8);\r\n    z-index: 9999;\" *ngIf=\"showloading\">\r\n        <img src=\"../assets/images/loader.gif\" height=\"50px\">\r\n    </div>   \r\n\t<div class=\"p_header\">\r\n        <img src=\"../assets/images/logo7.png\" height=\"70px\">\r\n        <i class=\"fa fa-bars menu_mobile\" (click)=\"onDropdown()\"></i>\r\n        <div class=\"menu_browser cursor\" (click)=\"onDropdownBrowser()\">\r\n            <img style=\"width:40px;\" src=\"../assets/images/user.png\">            \r\n            <span>&nbsp;&nbsp;&nbsp;{{email}}</span>\r\n        </div>\r\n    </div>\r\n    <div *ngIf=\"dropB\" class=\"menu_mobile_part\">\r\n        <div (click)=\"home()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-microphone active\"></i>&nbsp;&nbsp;&nbsp;Current Session</div>\r\n        <div (click)=\"past()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-history\"></i>&nbsp;&nbsp;&nbsp;Past Session</div>\r\n        <div (click)=\"logout()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-sign-out\"></i>&nbsp;&nbsp;&nbsp;Logout</div>\r\n    </div>\r\n    <div *ngIf=\"drop\" class=\"menu_mobile_part\">\r\n        <div style=\"display:flex;flex-direction: column;\"><img style=\"width:40px;\" src=\"../assets/images/user.png\"><span>{{email}}</span></div>\r\n        <div (click)=\"home()\"><i class=\"fa cursor fa-microphone active\"></i></div>\r\n        <div (click)=\"past()\"><i class=\"fa cursor fa-history\"></i></div>\r\n        <div (click)=\"logout()\"><i class=\"fa cursor fa-sign-out\"></i></div>\r\n    </div>\r\n    <div class=\"p_content\">\r\n        <div class=\"p_content_l\">\r\n            <a (click)=\"home()\" class=\"active cursor\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;Current Session</a>\r\n            <a (click)=\"past()\" class=\"cursor\"><i class=\"fa fa-history\"></i>&nbsp;&nbsp;Past Session</a>\r\n        </div>       \r\n        <div class=\"p_content_r\">\r\n            <div class=\"title\">Current Session\r\n                <span>offline&nbsp;&nbsp;<ui-switch color=\"#000034\" [(ngModel)]=\"availability\" (change)=\"onToggleChange($event)\"></ui-switch>&nbsp;&nbsp;online</span>\r\n            </div>\r\n            <div class=\"c_l\">\r\n                <div class=\"c_l_t\" [ngClass]=\"incomingcall!=0?'hiddenclass':'showclass'\">                    \r\n                    <div class=\"c_title\">Enter Session ID</div>\r\n                    <hr>\r\n                    <input type=\"text\" [(ngModel)]=\"sesstionID\" placeholder=\"eg.XRSD28\">\r\n                    <button (click)=\"getSesstionDetail()\">Get Sesstion Details</button>\r\n                </div>\r\n                <div class=\"c_l_t videoanswer\" [ngClass]=\"incomingcall==1?'flexclass':'hiddenclass'\">\r\n                    <img src=\"../assets/images/phone-ringing.gif\" height=\"150px\">\r\n                    <div>{{videochatSinger}} is calling you ...</div>\r\n                    <div>\r\n                        <button (click)=\"answertocall()\">Answer Call</button>\r\n                        <button (click)=\"declinecall()\">Decline Call</button>\r\n                    </div>\r\n                </div>\r\n                <div class=\"c_l_t videocall\" [ngClass]=\"incomingcall==2?'flexclass':'hiddenclass'\" style=\"justify-content: center;align-items: center; position: relative;\">\r\n                    <div>\r\n                        <div id=\"publisher\"></div>\r\n                        <div id=\"subscriber\"></div>\r\n                    </div>\r\n                    <div class=\"videochattitle\" [ngClass]=\"incomingcall==2?'flexclass':'hiddenclass'\">\r\n                        <div>Session ID : {{videochatSessionId.substring(0, 7)}}</div>\r\n                        <div>Singer : {{videochatSinger}}</div>\r\n                        <div>\r\n                            <button (click)=\"endcall()\">End Call</button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"c_l_b\">\r\n                    <div>\r\n                        <div class=\"c_title\">Send Backing Track/Loop</div>\r\n                        <hr>\r\n                        <div class=\"c_l_b_lbl\">\r\n                            Give the loop a name\r\n                        </div>\r\n                        <input type = \"text\" placeholder=\"eg. Versie, Chours\" [(ngModel)]=\"trackname\">\r\n                        <div class=\"upload-btn-wrapper c_l_b_file\" (click)=\"clearSelectedFile()\">\r\n                            <button class=\"btnfile\">Click here to upload</button>\r\n                            <input type=\"file\" (change)=\"detectFiles($event)\" id=\"myfile\" name=\"myfile\" multiple=\"false\" />\r\n                            <span class=\"c_l_b_lbl c_l_b_lbl_filename\" *ngIf=\"selectedFiles\">{{ selectedFiles[selectedFileInx].name }}</span>&nbsp;&nbsp;&nbsp;&nbsp;\r\n                            <span class=\"c_l_b_lbl\" *ngIf=\"showpercent\">{{ currentUpload?.progress }} % complete</span>\r\n                        </div>\r\n                    </div>\r\n                    <button [disabled]=\"!selectedFiles\" (click)=\"uploadSingle()\">Send Loop</button>                   \r\n                </div>                \r\n            </div>\r\n\r\n            <div class=\"c_r\">                 \r\n                <div class=\"c_r_t\">\r\n                    <div class=\"edittitle\" (click)=\"onEdit()\" *ngIf=\"currentSinger != undefined && !showtextarea\"><i class=\"fa fa-edit\"></i></div>\r\n                    <div class=\"edittitle\" (click)=\"onSave()\" *ngIf=\"currentSinger != undefined && showtextarea\"><i class=\"fa fa-save\"></i></div>\r\n                    <div class=\"c_title\">\r\n                        Singer: <span *ngIf=\"currentSinger != undefined\">{{currentSinger.name}}</span>\r\n                        <span *ngIf=\"currentSinger == undefined\">No Singer</span>\r\n                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n                        Title: <span *ngIf=\"currentLyrics != undefined\">{{currentLyrics.title}}</span>\r\n                        <span *ngIf=\"currentSinger == undefined\">No title</span>\r\n                    </div>\r\n                    <hr>\r\n                    <div class=\"c_r_t_lbl\" *ngIf=\"currentLyrics != undefined && !showtextarea\">\r\n                        <textarea readonly style=\"background-color:transparent;\" rows=\"7\">{{currentLyrics.description}}</textarea>                        \r\n                    </div>\r\n                    <div class=\"c_r_t_lbl\" *ngIf=\"currentLyrics == undefined\">\r\n                        There is no lyrics.\r\n                    </div>\r\n                    <textarea [(ngModel)]=\"newLyrics\" *ngIf=\"currentLyrics != undefined && showtextarea\" rows=\"7\">{{currentLyrics.description}}</textarea>\r\n                </div>                         \r\n                <app-list [value]=\"downloads\"></app-list>                        \r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div class=\"home text-center\">\r\n    <div style=\"position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: rgba(6, 10, 14, 0.8);\r\n    z-index: 9999;\" *ngIf=\"showloading\">\r\n        <img src=\"../assets/images/loader.gif\" height=\"50px\">\r\n    </div>   \r\n\t<div class=\"p_header\">\r\n        <img src=\"../assets/images/logo7.png\" height=\"70px\">\r\n        <i class=\"fa fa-bars menu_mobile\" (click)=\"onDropdown()\"></i>\r\n        <div class=\"menu_browser cursor\" (click)=\"onDropdownBrowser()\">\r\n            <img style=\"width:40px;\" src=\"../assets/images/user.png\">            \r\n            <span>&nbsp;&nbsp;&nbsp;{{email}}</span>\r\n        </div>\r\n    </div>\r\n    <div *ngIf=\"dropB\" class=\"menu_mobile_part\">\r\n        <div (click)=\"home()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-microphone active\"></i>&nbsp;&nbsp;&nbsp;Current Session</div>\r\n        <div (click)=\"past()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-history\"></i>&nbsp;&nbsp;&nbsp;Past Session</div>\r\n        <div (click)=\"logout()\" class=\"cursor\" style=\"justify-content:flex-start;\"><i class=\"fa fa-sign-out\"></i>&nbsp;&nbsp;&nbsp;Logout</div>\r\n    </div>\r\n    <div *ngIf=\"drop\" class=\"menu_mobile_part\">\r\n        <div style=\"display:flex;flex-direction: column;\"><img style=\"width:40px;\" src=\"../assets/images/user.png\"><span>{{email}}</span></div>\r\n        <div (click)=\"home()\"><i class=\"fa cursor fa-microphone active\"></i></div>\r\n        <div (click)=\"past()\"><i class=\"fa cursor fa-history\"></i></div>\r\n        <div (click)=\"logout()\"><i class=\"fa cursor fa-sign-out\"></i></div>\r\n    </div>\r\n    <div class=\"p_content\">\r\n        <div class=\"p_content_l\">\r\n            <a (click)=\"home()\" class=\"active cursor\"><i class=\"fa fa-microphone\"></i>&nbsp;&nbsp;Current Session</a>\r\n            <a (click)=\"past()\" class=\"cursor\"><i class=\"fa fa-history\"></i>&nbsp;&nbsp;Past Session</a>\r\n        </div>       \r\n        <div class=\"p_content_r\">\r\n            <div class=\"title\">Current Session\r\n                <span>offline&nbsp;&nbsp;<ui-switch color=\"#000034\" [(ngModel)]=\"availability\" (change)=\"onToggleChange($event)\"></ui-switch>&nbsp;&nbsp;online</span>\r\n            </div>\r\n            <div class=\"c_l\">\r\n                <div class=\"c_l_t\" [ngClass]=\"incomingcall!=0?'hiddenclass':'showclass'\">                    \r\n                    <div class=\"c_title\">Enter Session ID</div>\r\n                    <hr>\r\n                    <input type=\"text\" [(ngModel)]=\"sesstionID\" placeholder=\"eg.XRSD28\">\r\n                    <button (click)=\"getSesstionDetail()\">Get Sesstion Details</button>\r\n                </div>\r\n                <div class=\"c_l_t videoanswer\" [ngClass]=\"incomingcall==1?'flexclass':'hiddenclass'\">\r\n                    <img src=\"../assets/images/phone-ringing.gif\" height=\"150px\">\r\n                    <div>{{videochatSinger}} is calling you ...</div>\r\n                    <div>\r\n                        <button (click)=\"answertocall()\">Answer Call</button>\r\n                        <button (click)=\"declinecall()\">Decline Call</button>\r\n                    </div>\r\n                </div>\r\n                <div class=\"c_l_t videocall\" [ngClass]=\"incomingcall==2?'flexclass':'hiddenclass'\" style=\"justify-content: center;align-items: center; position: relative;\">\r\n                    <div>\r\n                        <div id=\"publisher\"></div>\r\n                        <div id=\"subscriber\"></div>\r\n                    </div>\r\n                    <div class=\"videochattitle\" [ngClass]=\"incomingcall==2?'flexclass':'hiddenclass'\">\r\n                        <div>Session ID : {{videochatSessionId.substring(0, 7)}}</div>\r\n                        <div>Singer : {{videochatSinger}}</div>\r\n                        <div>\r\n                            <button (click)=\"endcall()\">End Call</button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"c_l_b\">\r\n                    <div>\r\n                        <div class=\"c_title\">Send Backing Track/Loop</div>\r\n                        <hr>\r\n                        <div class=\"c_l_b_lbl\">\r\n                            Give the loop a name\r\n                        </div>\r\n                        <input type = \"text\" placeholder=\"eg. Versie, Chours\" [(ngModel)]=\"trackname\">\r\n                        <div class=\"upload-btn-wrapper c_l_b_file\" (click)=\"clearSelectedFile()\">\r\n                            <button class=\"btnfile\">Click here to upload</button>\r\n                            <input type=\"file\" (change)=\"detectFiles($event)\" id=\"myfile\" name=\"myfile\" multiple=\"false\" />\r\n                            <span class=\"c_l_b_lbl c_l_b_lbl_filename\" *ngIf=\"selectedFiles\">{{ selectedFiles[selectedFileInx].name }}</span>&nbsp;&nbsp;&nbsp;&nbsp;\r\n                            <span class=\"c_l_b_lbl\" *ngIf=\"showpercent\">{{ currentUpload?.progress }} % complete</span>\r\n                        </div>\r\n                    </div>\r\n                    <button [disabled]=\"!selectedFiles\" (click)=\"uploadSingle()\">Send Loop</button>                   \r\n                </div>                \r\n            </div>\r\n\r\n            <div class=\"c_r\">\r\n                <div class=\"c_r_t\">\r\n                    <div class=\"edittitle\" (click)=\"onEdit()\" *ngIf=\"currentSinger != undefined && !showtextarea\"><i class=\"fa fa-edit\"></i></div>\r\n                    <div class=\"edittitle\" (click)=\"onSave()\" *ngIf=\"currentSinger != undefined && showtextarea\"><i class=\"fa fa-save\"></i></div>\r\n                    <div class=\"c_title\">\r\n                        Singer: <span *ngIf=\"currentSinger != undefined\">{{currentSinger.name}}</span>\r\n                        <span *ngIf=\"currentSinger == undefined\">No Singer</span>\r\n                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n                        Title: <span *ngIf=\"currentLyrics != undefined\">{{currentLyrics.title}}</span>\r\n                        <span *ngIf=\"currentSinger == undefined\">No title</span>\r\n                    </div>\r\n                    <hr>\r\n                    <div class=\"c_r_t_lbl\" *ngIf=\"currentLyrics != undefined && !showtextarea\">\r\n                        <textarea readonly style=\"background-color:transparent;\" rows=\"7\">{{currentLyrics.description}}</textarea>                        \r\n                    </div>\r\n                    <div class=\"c_r_t_lbl\" *ngIf=\"currentLyrics == undefined\">\r\n                        There is no lyrics.\r\n                    </div>\r\n                    <textarea [(ngModel)]=\"newLyrics\" *ngIf=\"currentLyrics != undefined && showtextarea\" rows=\"7\">{{currentLyrics.description}}</textarea>\r\n                </div>                         \r\n                <app-list [value]=\"downloads\"></app-list>                        \r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -462,15 +462,14 @@ var HomeComponent = (function () {
         this.itemsRef.update(localStorage.getItem("id"), { status: { availability: true } });
         this.availability = true;
         var self = this;
+        this.socket.on('ping', function (msg) {
+            alert(msg);
+        });
         this.socket.on('calltoreceiver', function (data) {
             self.playAudio();
             if (data.data.producer == localStorage.getItem("id")) {
                 self.incomingcall = 1;
-                self.videochatSessionId = data.sessionId;
-                self.videochatSinger = data.data.singer;
                 self.videochatData = data;
-                self.firebasesession = data.firebasesession;
-                self.sesstionID = data.firebasesession;
             }
         });
         this.socket.on('endfromcaller', function (data) {
@@ -509,6 +508,10 @@ var HomeComponent = (function () {
     HomeComponent.prototype.answertocall = function () {
         this.pauseAudio();
         this.incomingcall = 2;
+        this.videochatSessionId = this.videochatData['sessionId'];
+        this.videochatSinger = this.videochatData['data']['singer'];
+        this.firebasesession = this.videochatData['firebasesession'];
+        this.sesstionID = this.videochatData['firebasesession'];
         if (this.videoopentoksession != null)
             this.videoopentoksession.disconnect();
         this.sendMessage(JSON.stringify(this.videochatData), "answer");
@@ -525,11 +528,9 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.endcall = function () {
         this.sendMessage(JSON.stringify(this.videochatData), "end");
-        console.log(this.videoopentoksession);
         if (!!this.videoopentoksession) {
             this.videoopentoksession.disconnect();
         }
-        console.log(this.videoopentoksession);
         this.incomingcall = 0;
         this.videochatSessionId = "";
         this.videochatSinger = "";
@@ -540,15 +541,6 @@ var HomeComponent = (function () {
             console.log('We are alreaady connected!');
             return;
         }
-        // if (this.videoopentoksession) {
-        //   this.videoopentoksession.disconnect();
-        //   this.incomingcall = 0;
-        //   this.videochatSessionId = "";
-        //   this.videochatSinger = "";
-        //   this.videochatData = "";
-        //   this.endcall();
-        // }
-        console.log(this.videoopentoksession);
         this.videoopentoksession = OT.initSession("46114862", data.sessionId);
         // Subscribe to a newly created stream
         // Create a publisher
@@ -758,20 +750,6 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.logout = function () {
         if (this.incomingcall != 0) {
-            $.confirm({
-                title: '',
-                content: 'Please end current call before navigating away.',
-                type: 'white',
-                buttons: {
-                    ok: {
-                        text: "OK",
-                        btnClass: 'btn-primary',
-                        keys: ['enter'],
-                        action: function () {
-                        }
-                    }
-                }
-            });
         }
         else {
             var self = this;
@@ -813,20 +791,6 @@ var HomeComponent = (function () {
             window.location.href = "/past";
         }
         else {
-            $.confirm({
-                title: '',
-                content: 'Please end current call before navigating away.',
-                type: 'white',
-                buttons: {
-                    ok: {
-                        text: "OK",
-                        btnClass: 'btn-primary',
-                        keys: ['enter'],
-                        action: function () {
-                        }
-                    }
-                }
-            });
         }
     };
     HomeComponent.prototype.home = function () {
