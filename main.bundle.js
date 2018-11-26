@@ -367,6 +367,14 @@ module.exports = "<div class=\"home text-center\">\r\n    <div style=\"position:
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__list_list_component__ = __webpack_require__("../../../../../src/app/list/list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng_socket_io__ = __webpack_require__("../../../../ng-socket-io/dist/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng_socket_io__);
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -621,107 +629,108 @@ var HomeComponent = (function () {
         this.sendMessage(JSON.stringify({ sessionid: hexString, filename: filename, data: this.videochatData }), "clip");
     };
     HomeComponent.prototype.getSesstionDetail = function () {
-        // localStorage.setItem("pastID", this.sesstionID);
-        // this.currentSesstion = new Object();
-        // this.currentLyrics = new Object();
-        // this.currentSinger = new Object();
-        // this.currentLyricsItem = new Object();
-        // this.currentProducer = new Object();
-        // this.currentLyricsItemInx = "";
-        // this.sesstionID = this.sesstionID.trim();
-        // this.showloading = true;
-        // this.af.list('producer').snapshotChanges().map(actions => {
-        //   return actions.map(action => ({ key: action.key, ...action.payload.val() }));
-        //   }).subscribe(items => {             
-        //     items.forEach(element => {
-        //       if(element.sessions != undefined){
-        //         var sessionsKeyList = Object.keys(element.sessions);        
-        //         sessionsKeyList.forEach(elementsesstion => {
-        //           if(elementsesstion == this.sesstionID){                
-        //             this.currentProducer = element;
-        //             this.currentSesstion = element.sessions[elementsesstion];               
-        //           }
-        //         });
-        //       }
-        //     });   
-        //     if(JSON.stringify(this.currentSesstion) != "{}"){
-        //       this.af.list('lyrics').snapshotChanges().map(actions1 => {
-        //         return actions1.map(action1 => ({ key: action1.key, ...action1.payload.val() }));
-        //         }).subscribe(items1 => { 
-        //           var isExist = false;            
-        //           items1.forEach(element1 => {
-        //             var keys = Object.keys(element1); 
-        //             var inx = keys.indexOf(this.currentSesstion.lyricsId);                
-        //             if(inx != -1){
-        //               isExist = true;
-        //               this.currentLyricsItem = element1;
-        //               this.currentLyricsItemInx = keys[inx];                
-        //               this.currentLyrics = Object.values(element1)[inx];
-        //               this.newLyrics = this.currentLyrics.description;                  
-        //               var singer = element1.key;
-        //               this.af.list('users').snapshotChanges().map(actions2 => {
-        //                 return actions2.map(action2 => ({ key: action2.key, ...action2.payload.val() }));
-        //                 }).subscribe(items2 => {
-        //                   items2.forEach(element2 => {                        
-        //                     if(element2.key == singer){
-        //                       this.currentSinger = element2;
-        //                     }
-        //                   });                      
-        //               });
-        //               this.af.list('uploads').snapshotChanges().map(actions3 => {
-        //                 return actions3.map(action3 => ({ key: action3.key, ...action3.payload.val() }));
-        //                 }).subscribe(items3 => {                        
-        //                   var tempDownloads = [];                          
-        //                   items3.forEach(element3 => {
-        //                     if(element3.producer == this.sesstionID){                
-        //                       tempDownloads.push(element3);                              
-        //                     }              
-        //                   }); 
-        //                   this.showloading = false;                         
-        //                   setTimeout(() => {
-        //                     this.downloads = tempDownloads;
-        //                   }, 100);
-        //               });
-        //             }                             
-        //           });
-        //           if(!isExist){                
-        //               this.showloading = false;                        
-        //               $.confirm({
-        //                 title: '',
-        //                 content: 'No session result.',
-        //                 type: 'white',
-        //                 buttons: {                        
-        //                     cancel: {
-        //                       text: "OK",
-        //                       btnClass: 'btn-primary',
-        //                       keys: ['enter'],
-        //                       action: function(){ 
-        //                       }
-        //                     }
-        //                   }
-        //               });
-        //           }
-        //       });
-        //     }
-        //     else{  
-        //       this.showloading = false;
-        //       this.sesstionID = "";          
-        //       $.confirm({
-        //         title: '',
-        //         content: 'No session result.',
-        //         type: 'white',
-        //         buttons: {                        
-        //             cancel: {
-        //               text: "OK",
-        //               btnClass: 'btn-primary',
-        //               keys: ['enter'],
-        //               action: function(){ 
-        //               }
-        //             }
-        //           }
-        //       });
-        //     }
-        // });
+        var _this = this;
+        localStorage.setItem("pastID", this.sesstionID);
+        this.currentSesstion = new Object();
+        this.currentLyrics = new Object();
+        this.currentSinger = new Object();
+        this.currentLyricsItem = new Object();
+        this.currentProducer = new Object();
+        this.currentLyricsItemInx = "";
+        this.sesstionID = this.sesstionID.trim();
+        this.showloading = true;
+        this.af.list('producer').snapshotChanges().map(function (actions) {
+            return actions.map(function (action) { return (__assign({ key: action.key }, action.payload.val())); });
+        }).subscribe(function (items) {
+            items.forEach(function (element) {
+                if (element.sessions != undefined) {
+                    var sessionsKeyList = Object.keys(element.sessions);
+                    sessionsKeyList.forEach(function (elementsesstion) {
+                        if (elementsesstion == _this.sesstionID) {
+                            _this.currentProducer = element;
+                            _this.currentSesstion = element.sessions[elementsesstion];
+                        }
+                    });
+                }
+            });
+            if (JSON.stringify(_this.currentSesstion) != "{}") {
+                _this.af.list('lyrics').snapshotChanges().map(function (actions1) {
+                    return actions1.map(function (action1) { return (__assign({ key: action1.key }, action1.payload.val())); });
+                }).subscribe(function (items1) {
+                    var isExist = false;
+                    items1.forEach(function (element1) {
+                        var keys = Object.keys(element1);
+                        var inx = keys.indexOf(_this.currentSesstion.lyricsId);
+                        if (inx != -1) {
+                            isExist = true;
+                            _this.currentLyricsItem = element1;
+                            _this.currentLyricsItemInx = keys[inx];
+                            _this.currentLyrics = Object.values(element1)[inx];
+                            _this.newLyrics = _this.currentLyrics.description;
+                            var singer = element1.key;
+                            _this.af.list('users').snapshotChanges().map(function (actions2) {
+                                return actions2.map(function (action2) { return (__assign({ key: action2.key }, action2.payload.val())); });
+                            }).subscribe(function (items2) {
+                                items2.forEach(function (element2) {
+                                    if (element2.key == singer) {
+                                        _this.currentSinger = element2;
+                                    }
+                                });
+                            });
+                            _this.af.list('uploads').snapshotChanges().map(function (actions3) {
+                                return actions3.map(function (action3) { return (__assign({ key: action3.key }, action3.payload.val())); });
+                            }).subscribe(function (items3) {
+                                var tempDownloads = [];
+                                items3.forEach(function (element3) {
+                                    if (element3.producer == _this.sesstionID) {
+                                        tempDownloads.push(element3);
+                                    }
+                                });
+                                _this.showloading = false;
+                                setTimeout(function () {
+                                    _this.downloads = tempDownloads;
+                                }, 100);
+                            });
+                        }
+                    });
+                    if (!isExist) {
+                        _this.showloading = false;
+                        $.confirm({
+                            title: '',
+                            content: 'No session result.',
+                            type: 'white',
+                            buttons: {
+                                cancel: {
+                                    text: "OK",
+                                    btnClass: 'btn-primary',
+                                    keys: ['enter'],
+                                    action: function () {
+                                    }
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+            else {
+                _this.showloading = false;
+                _this.sesstionID = "";
+                $.confirm({
+                    title: '',
+                    content: 'No session result.',
+                    type: 'white',
+                    buttons: {
+                        cancel: {
+                            text: "OK",
+                            btnClass: 'btn-primary',
+                            keys: ['enter'],
+                            action: function () {
+                            }
+                        }
+                    }
+                });
+            }
+        });
     };
     HomeComponent.prototype.closeLoading = function () {
         this.showloading = false;
