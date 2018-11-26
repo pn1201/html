@@ -414,7 +414,6 @@ var HomeComponent = (function () {
         this.email = "";
         this.incomingcall = 0;
         this.availability = false;
-        //sessionList = [];
         this.videochatSessionId = "";
         this.videochatSinger = "";
         this.videochatData = "";
@@ -695,20 +694,7 @@ var HomeComponent = (function () {
                     });
                     if (!isExist) {
                         _this.showloading = false;
-                        $.confirm({
-                            title: '',
-                            content: 'No session result.',
-                            type: 'white',
-                            buttons: {
-                                cancel: {
-                                    text: "OK",
-                                    btnClass: 'btn-primary',
-                                    keys: ['enter'],
-                                    action: function () {
-                                    }
-                                }
-                            }
-                        });
+                        console.log("direct call from caller");
                     }
                 });
             }
