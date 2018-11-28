@@ -420,6 +420,7 @@ var HomeComponent = (function () {
         this.firebasesession = "";
         this.videoopentoksession = null;
         this.isConnected = false;
+        this.isDirectCalled = false;
         this.itemsRef = af.list('producer');
         this.lyricsRef = af.list('lyrics');
         this.items = this.itemsRef.valueChanges();
@@ -652,7 +653,10 @@ var HomeComponent = (function () {
                     });
                 }
             });
-            if (JSON.stringify(_this.currentSesstion) != "{}") {
+            if (_this.currentSesstion.lyricsId == "") {
+                console.log(_this.videochatData);
+            }
+            else if (JSON.stringify(_this.currentSesstion) != "{}") {
                 _this.af.list('lyrics').snapshotChanges().map(function (actions1) {
                     return actions1.map(function (action1) { return (__assign({ key: action1.key }, action1.payload.val())); });
                 }).subscribe(function (items1) {
