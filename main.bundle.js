@@ -467,6 +467,7 @@ var HomeComponent = (function () {
         });
         this.socket.on('calltoreceiver', function (data) {
             if (data.data.producer == localStorage.getItem("id")) {
+                console.log(data);
                 self.playAudio();
                 self.incomingcall = 1;
                 self.videochatData = data;
@@ -655,6 +656,7 @@ var HomeComponent = (function () {
             });
             if (_this.currentSesstion.lyricsId == "") {
                 console.log(_this.videochatData);
+                _this.showloading = false;
             }
             else if (JSON.stringify(_this.currentSesstion) != "{}") {
                 _this.af.list('lyrics').snapshotChanges().map(function (actions1) {
